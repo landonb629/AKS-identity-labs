@@ -58,4 +58,26 @@ Roles:
 
 ## Cluster Identity 
 
+### Service principals + managed identities 
 For AKS to access and make requests to other Azure resources, it's required to have either a service principal or a managed identity
+
+Microsoft recommendation: use Managed identities to authenticate with other resources in azure, this is also the default authentication method in your AKS cluster 
+
+
+#### Service principals 
+Creating and user a service principal for AKS cluster
+
+```
+az ad sp create-for-rbac --name devCluster
+```
+
+specify the APPID for as the service principal for the AKS cluster, and use the client secret
+- the service principal will need role assignments in order to be able to perform the necessary actions 
+
+all of the permissions required can be found here 
+
+https://gist.github.com/noelbundick/7799d7dfe76745a4fdd31b0f8563a858
+
+
+#### Managed Identities
+
