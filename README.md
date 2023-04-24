@@ -80,4 +80,11 @@ https://gist.github.com/noelbundick/7799d7dfe76745a4fdd31b0f8563a858
 
 
 #### Managed Identities
+Managed identities are pretty much just a wrapper for service principals, but they make them easier to use because you don't have to handle any of the secret rotating
+
+- by default, your AKS cluster is going to be created with a system assigned managed identity
+- managed identity can be created from the portal, az cli, or with an IaC tool like terraform / pulumi / bicep
+
+
+#### Difference between Cluster Identity and Identity
 
